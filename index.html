@@ -378,7 +378,7 @@ const D={
   }
  ],
  "about": {
-  "summary": "Copywriter and editorial strategist with 5+ years’ experience writing and shaping brand narratives across architecture, art, and design. I write and edit across formats, from long-form publications and press materials to campaign copy and founder-facing communications, combining editorial rigour with research and creative direction to produce audience-focused content across digital, print, and social. My academic research into architectural history and cultural memory underpins a strategic, and context-driven approach to storytelling.",
+  "summary": "I’m a writer and researcher working across architecture, art, and design.",
   "exp": [
    {
     "date": "February 2025 – Present",
@@ -437,13 +437,13 @@ function bars(){document.querySelectorAll('.sc').forEach(s=>{const c=s.querySele
 function aboutHTML(){const A=D.about;
 const row=e=>`<div class="row"><div class="d">${e.date}</div><div><span class="o">${e.org}</span><span class="r">${e.role||e.deg}</span>${e.diss?`<div class="ds">${e.dl||'Dissertation'}: <em>${e.diss}</em></div>`:''}</div></div>`;
 return `<h1>About</h1>`+sc(`<p class="sum">${A.summary}</p><h2 class="m">Experience</h2>${A.exp.map(row).join('')}<h2 class="m">Education</h2>${A.edu.map(row).join('')}`)
-+nav('<a href="#/professional">Professional</a><a href="#/academic">Academic</a>',null)}
++nav('<a href="#/academic">Academic</a><a href="#/professional">Professional</a>',null)}
 function render(){
   const [s,id,n]=location.hash.replace(/^#\/?/,'').split('/');
   let h;
   if(s==='about'){h=aboutHTML();document.title='About — Julia Craze'}
   else if(!s||!sec[s]){
-    h=`<div class="home-title">Words<br>by Julia Craze</div><nav class="nav all"><a href="#/professional">Professional</a><a href="#/academic">Academic</a><a class="sp ab" href="#/about">About</a></nav>`;
+    h=`<div class="home-title">Words<br>by Julia Craze</div><nav class="nav all"><a href="#/academic">Academic</a><a href="#/professional">Professional</a><a class="sp ab" href="#/about">About</a></nav>`;
     document.title='Words by Julia Craze';
   }else if(!id){
     h=`<h1>${s[0].toUpperCase()+s.slice(1)}</h1>`+nav(sec[s].map(p=>`<a href="#/${s}/${p.id}/1">${p.label}</a>`).join(''),null,true);
